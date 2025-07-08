@@ -28,8 +28,10 @@ function onClickLanguage(lang: string) {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 nav {
+    background-color: blue;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;

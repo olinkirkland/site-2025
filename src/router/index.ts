@@ -5,8 +5,10 @@ import HomePage from '@/pages/HomePage.vue';
 const routes = [
     {
         path: '/:locale(en|de)',
-        name: 'home',
-        component: HomePage
+        components: {
+            page: HomePage
+        },
+        name: 'home'
     }
 ];
 
