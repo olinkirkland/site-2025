@@ -1,0 +1,11 @@
+<template>
+    <article>
+        <section>HERO</section>
+        <section>ABOUT</section>
+        <section>SKILLS</section>
+        <section>PROJECTS</section>
+        <section>TIMELINE</section>
+        <section>CERTIFICATES-EDUCATION</section>
+        <section>CONTACT-BANNER</section>
+    </article>
+</template>

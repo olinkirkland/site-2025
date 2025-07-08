@@ -1,15 +1,20 @@
-<script setup lang="ts"></script>
-
 <template>
-    <section>HERO</section>
-    <section>ABOUT</section>
-    <section>SKILLS</section>
-    <section>PROJECTS</section>
-    <section>TIMELINE</section>
-    <section>CERTIFICATES-EDUCATION</section>
-    <section>CONTACT-BANNER</section>
-    <section>FOOTER</section>
+    <Nav />
+    <div class="app-layout">
+        <router-view name="page" v-slot="{ Component, route }">
+            <component :is="Component" />
+        </router-view>
+    </div>
+    <footer>FOOTER</footer>
 </template>
+
+<script setup lang="ts">
+import Nav from './components/TheNav.vue';
+import { initializeI18nInstance } from './i18n/locale';
+
+// Initialize i18n instance
+initializeI18nInstance();
+</script>
 
 <style lang="scss">
 @use 'assets/scss/reset.scss';

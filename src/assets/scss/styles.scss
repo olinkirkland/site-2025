@@ -12,7 +12,9 @@ body {
     overscroll-behavior-x: none;
 }
 
-// Typography
+.logo {
+    font-family: var(--display);
+}
 
 h1,
 h2,
@@ -25,25 +27,24 @@ h6 {
     color: var(--on-surface);
 }
 
+h1 {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
 h3 {
     font-size: 2.4rem;
     font-weight: bold;
-    color: var(--surface-alt);
-    text-transform: uppercase;
 }
 
-h4 {
-    opacity: 0.6;
-    font-size: 1.2rem;
-    text-align: center;
-    font-weight: normal;
-}
-
-code {
-    font-family: monospace;
-    color: var(--on-surface);
-    background-color: var(--overlay);
-    padding: 0.1rem 0.4rem;
+* {
+    touch-action: manipulation; // Prevent double-tap zoom on mobile devices
+    -webkit-tap-highlight-color: transparent; // Prevent highlight on tap
 }
 
 pre {
@@ -59,29 +60,89 @@ pre {
     min-height: 3.8rem;
 }
 
-// Utility
-.muted {
-    opacity: 0.5;
-}
-
-.instructive {
-    opacity: 0.5;
-    font-style: italic;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.glass {
-    background-color: rgb(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
-}
-
 i {
     font-size: 1.2rem;
 }
 
 :focus {
     outline: none;
+}
+
+a {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--on-surface);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-bottom: 0.1rem dashed currentColor;
+    font-style: italic;
+    width: fit-content;
+
+    * {
+        font-size: inherit;
+    }
+
+    &:hover {
+        color: var(--primary-alt);
+    }
+}
+
+label {
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+
+.muted {
+    opacity: 0.5;
+}
+
+.full-width {
+    width: 100%;
+}
+
+:not(input) {
+    user-select: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.spread {
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 }
